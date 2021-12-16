@@ -82,7 +82,7 @@ def check(orders):
                     print("Order " + str(order["orderId"]) + " filled")
                 elif order["status"] == "CANCELED":
                     # Notify if an order is cancelled
-                    notify("Order " + str(order["orderId"]) + " cancelled successfully")
+                    notify("Order " + str(order["orderId"]) + " cancelled successfully " + str(float(order["origQty"])) + "@" + str(float(order["price"])))
                     print("Order " + str(order["orderId"]) + " cancelled")
 
                 if order["status"] != "NEW":
@@ -104,13 +104,16 @@ def check(orders):
                 # For orders that aren't pending, categorise as completed
                 print("Categorised " + str(order["orderId"]) + " as completed")
                 complete_orders.append(order)
+                if not initial_run:
+                    # If this isn't the first loop, notify about order having been filled
+                    notify("Order " + str(order["orderId"]) + " filled! " + str(float(order["origQty"])) + "@" + str(float(order["price"])))
             elif order["status"] == "NEW":
                 # For orders that are't pending, categorise as such
                 print("Categorised " + str(order["orderId"]) + " as pending")
                 pending_orders.append(order)
                 if not initial_run:
                     # If this isn't the first loop, notify about order creation
-                    notify("Order " + str(order["orderId"]) + " created successfully")
+                    notify("Order " + str(order["orderId"]) + " created successfully " + str(float(order["origQty"])) + "@" + str(float(order["price"])))
 
 if __name__ == "__main__":
     # Configuration variables
