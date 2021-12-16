@@ -53,4 +53,4 @@ BALANCE_ALERT=3600
 ## Donations
 If this project helps you in some way, please consider making a donation to support my future work. Instructions can be found by clicking [here](https://github.com/lnxd#donations). Additionally, if you don't have a Binance account, [this](https://accounts.binance.com/en/register?ref=158612165) is my referral link which doesn't cost you anything to use, but would give me a commission on your trade fees.
 
-Thank you
+Thank you 😊
